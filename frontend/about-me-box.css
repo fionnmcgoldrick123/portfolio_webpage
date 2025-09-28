@@ -1,29 +1,53 @@
 .about-me-box {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -95%);
+    gap: 1.5rem;
+    padding: 1.25rem;
     width: 50%;
-    height: 300px;
     max-width: 600px;
-    padding: 20px;
+    margin: 2rem auto;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px;
-    text-align: center;
+    color: #fff;
 }
 
 .pfp {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
+    object-fit: cover;
     border: 1px solid rgba(202, 202, 202, 0.73);
-    filter: brightness(0.8);
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    margin: 10px;
+    filter: brightness(0.9);
+    flex-shrink: 0;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+}
+
+.top-line {
+    display: flex;
+    justify-content: space-between;
+    /* name left, GitHub right */
+}
+
+.name {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.icons {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    filter: invert();
+}
+
+.location {
+    margin: 0.3rem 0 0;
+    font-size: 1rem;
+    color: #aaa;
 }
