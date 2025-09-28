@@ -30,7 +30,6 @@
 .top-line {
     display: flex;
     justify-content: space-between;
-    /* name left, GitHub right */
 }
 
 .name {
@@ -44,10 +43,16 @@
     height: 24px;
     cursor: pointer;
     filter: invert();
+    text-decoration: none;
 }
 
 .location {
     margin: 0.3rem 0 0;
     font-size: 1rem;
     color: #aaa;
+}
+
+.social-icons a {
+  text-decoration: none;  
+  display: inline-block;   
 }

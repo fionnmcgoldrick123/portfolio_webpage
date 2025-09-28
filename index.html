@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="frontend/index.css">
+    <link rel="stylesheet" href="frontend/navbar.css">
+    <link rel="stylesheet" href="frontend/about-me-box.css">
+</head>
+
+<body>
+    <div class="background"></div>
+    
+    <!-- blurred background script -->
+    <script>
+        const bg = document.querySelector('.background');
+
+        document.addEventListener('mousemove', e => {
+            const x = (e.clientX / window.innerWidth) * 100;
+            const y = (e.clientY / window.innerHeight) * 100;
+
+            bg.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(255,255,255,0.05), transparent 10%)`;
+        });
+    </script>
+
+    <!-- navigation bar -->
+    <div id="navbar"></div>
+    <script>
+        fetch('frontend/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+    </script>
+
+    <!-- about me box -->
+    <script>
+        fetch('frontend/about-me-box.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+    </script>
+
+</body>
+
+</html>
