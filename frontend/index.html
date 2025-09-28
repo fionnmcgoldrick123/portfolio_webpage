@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="about-me-box.css">
 </head>
-<body>
-    <!-- Include the navigation bar -->
-     <div id="navbar"></div>
 
-     <script>
+<body>
+    <!-- navigation bar -->
+    <div id="navbar"></div>
+    <script>
         fetch('navbar.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar').innerHTML = data;
             });
-     </script>
-    
+    </script>
+
+    <!-- about me box -->
+    <script>
+        fetch('about-me-box.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+    </script>
+
 </body>
+
 </html>
