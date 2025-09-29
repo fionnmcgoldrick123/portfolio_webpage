@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="frontend/index.css">
     <link rel="stylesheet" href="frontend/navbar.css">
     <link rel="stylesheet" href="frontend/about-me-box.css">
+    <link rel="stylesheet" href="frontend/marquee.css">
 </head>
 
 <body>
@@ -25,24 +26,24 @@
         });
     </script>
 
-    <!-- navigation bar -->
     <div id="navbar"></div>
-    <script>
-        fetch('frontend/navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar').innerHTML = data;
-            });
-    </script>
+    <div id="about"></div>
+    <div id="skills"></div>
 
-    <!-- about me box -->
-    <script>
-        fetch('frontend/about-me-box.html')
-            .then(response => response.text())
-            .then(data => {
-                document.body.insertAdjacentHTML('beforeend', data);
-            });
-    </script>
+     <script>
+    (async () => {
+      
+      document.getElementById('navbar').innerHTML =
+        await (await fetch('frontend/navbar.html')).text();
+
+      // ensure About loads before Skills
+      document.getElementById('about').innerHTML =
+        await (await fetch('frontend/about-me-box.html')).text();
+
+      document.getElementById('skills').innerHTML =
+        await (await fetch('frontend/marquee.html')).text();
+    })();
+  </script>
 
 </body>
 
